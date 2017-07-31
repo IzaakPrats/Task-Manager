@@ -11,7 +11,7 @@
         <!--Task List-->
         <scene sceneID="tBg-Oq-DOF">
             <objects>
-                <viewController id="QPJ-nq-fUT" sceneMemberID="viewController">
+                <viewController id="QPJ-nq-fUT" customClass="TaskListViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rAU-Oh-eXr"/>
                         <viewControllerLayoutGuide type="bottom" id="Bkp-lk-dkn"/>
