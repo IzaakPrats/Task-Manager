@@ -12,6 +12,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var tasks: [Task] = []
     
+    var selectedTask: Task!
+    
     var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
@@ -28,6 +30,21 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let task3 = Task(title: "Task 3", dueDate: Date(), priority: .low, complete: false)
         tasks.append(task3)
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Checking to make sure the segue's identifier is for the segue we want
+        if segue.identifier == "showTaskDetail" {
+            //Since it is, let's type cast our segue destination as a TaskDetailViewController, since we know that our destination will be one
+            let destinationViewController = segue.destination as! TaskDetailViewController
+            
+            //Set the task parameter in the destination view controller with the selected task from didSelectRowAt
+            destinationViewController.task = selectedTask
+        }
+        
     }
     
     //Returns the number of sections the table view has
@@ -62,6 +79,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Determines what happens when the cell at the given index path is tapped by the user
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Set selectedTask as the task at the given index path row
+        selectedTask = tasks[indexPath.row]
+        
         //When a cell is selected, perform the segue to the detail screen to show details about the task
         self.performSegue(withIdentifier: "showTaskDetail", sender: self)
     }
@@ -70,14 +90,4 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

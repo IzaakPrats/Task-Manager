@@ -10,14 +10,28 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
     
+    //References to UI elements for this screen
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    //The task about which information will be displayed on this screen
+    var task: Task!
+    
+    //Date formatter used to format our task due dates for display
+    var dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //Set the date format used by the date formatter
+        dateFormatter.dateFormat = "MMM d, yyyy, h:mm a"
+        
+        //Set the UI elements with information from the task
+        titleLabel.text = task.title
+        priorityLabel.text = task.priority.rawValue
+        dateLabel.text = dateFormatter.string(from: task.dueDate)
+        
     }
 
     override func didReceiveMemoryWarning() {
