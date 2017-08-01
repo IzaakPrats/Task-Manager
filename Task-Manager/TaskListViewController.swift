@@ -11,14 +11,19 @@ import UIKit
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tasks: [Task] = []
+    
+    var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set the date format for our dateFormatter object
+        dateFormatter.dateFormat = "MMM d, yyyy, h:mm a"
+        
         let task1 = Task(title: "Task 1", dueDate: Date(), priority: .high, complete: false)
         tasks.append(task1)
         
-        let task2 = Task(title: "Task 2", dueDate: Date(), priority: .medium, complete: false)
+        let task2 = Task(title: "Task 2", dueDate: Date(), priority: .medium, complete: true)
         tasks.append(task2)
         
         let task3 = Task(title: "Task 3", dueDate: Date(), priority: .low, complete: false)
@@ -46,8 +51,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //Setting the UI elements for the new cell based on the task at the index path row
         cell.titleLabel.text = taskForIndexPath.title
-        //Wait...this won't work?!
-        //cell.dateLabel.text = taskForIndexPath.dueDate
+        //Display the date as a string on our date label by using the date formatter to convert the due date from the task into a styled string
+        cell.dateLabel.text = dateFormatter.string(from: taskForIndexPath.dueDate)
         cell.priorityLabel.text = taskForIndexPath.priority.rawValue
         cell.completionSwitch.isOn = taskForIndexPath.complete
         
