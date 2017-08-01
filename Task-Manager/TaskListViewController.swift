@@ -37,8 +37,21 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Returns the cell for the given index path
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = tasks[indexPath.row].title
+        
+        //Take a table view cell that isn't being displayed currently on the screen or make a new one if none are available to create our new cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
+        
+        //Get the task from our list of tasks for the given index path row
+        let taskForIndexPath = tasks[indexPath.row]
+        
+        //Setting the UI elements for the new cell based on the task at the index path row
+        cell.titleLabel.text = taskForIndexPath.title
+        //Wait...this won't work?!
+        //cell.dateLabel.text = taskForIndexPath.dueDate
+        cell.priorityLabel.text = taskForIndexPath.priority.rawValue
+        cell.completionSwitch.isOn = taskForIndexPath.complete
+        
+        //Once we're finished customizing our new cell, return it
         return cell
     }
     
