@@ -62,7 +62,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Determines what happens when the cell at the given index path is tapped by the user
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("cell selected")
+        //When a cell is selected, perform the segue to the detail screen to show details about the task
+        self.performSegue(withIdentifier: "showTaskDetail", sender: self)
     }
     
     //Returns the height for the cell at the given index path
