@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3980D3591F30C34C001AD708 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D3581F30C34C001AD708 /* TaskTableViewCell.swift */; };
 		39DA32591F2EAFA300607AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA32581F2EAFA300607AEC /* AppDelegate.swift */; };
 		39DA325E1F2EAFA300607AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA325C1F2EAFA300607AEC /* Main.storyboard */; };
 		39DA32601F2EAFA300607AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DA325F1F2EAFA300607AEC /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3980D3581F30C34C001AD708 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		39DA32551F2EAFA300607AEC /* Task-Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task-Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DA32581F2EAFA300607AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39DA325D1F2EAFA300607AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				39DA325F1F2EAFA300607AEC /* Assets.xcassets */,
 				39DA32611F2EAFA300607AEC /* LaunchScreen.storyboard */,
 				39DA32641F2EAFA300607AEC /* Info.plist */,
+				3980D3581F30C34C001AD708 /* TaskTableViewCell.swift */,
 			);
 			path = "Task-Manager";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				39DA326B1F2EB12200607AEC /* Task.swift in Sources */,
 				39DA32711F2EC00900607AEC /* TaskListViewController.swift in Sources */,
+				3980D3591F30C34C001AD708 /* TaskTableViewCell.swift in Sources */,
 				39DA32591F2EAFA300607AEC /* AppDelegate.swift in Sources */,
 				39DA326D1F2EB12E00607AEC /* Enumerations.swift in Sources */,
 			);
