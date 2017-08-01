@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3980D3591F30C34C001AD708 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D3581F30C34C001AD708 /* TaskTableViewCell.swift */; };
 		3980D3651F30F1D9001AD708 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D3641F30F1D9001AD708 /* TaskDetailViewController.swift */; };
+		39CF52501F30FD5D00334CB1 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF524F1F30FD5D00334CB1 /* TaskManager.swift */; };
 		39DA32591F2EAFA300607AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA32581F2EAFA300607AEC /* AppDelegate.swift */; };
 		39DA325E1F2EAFA300607AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA325C1F2EAFA300607AEC /* Main.storyboard */; };
 		39DA32601F2EAFA300607AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DA325F1F2EAFA300607AEC /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3980D3581F30C34C001AD708 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		3980D3641F30F1D9001AD708 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		39CF524F1F30FD5D00334CB1 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		39DA32551F2EAFA300607AEC /* Task-Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task-Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DA32581F2EAFA300607AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39DA325D1F2EAFA300607AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				39DA326C1F2EB12E00607AEC /* Enumerations.swift */,
+				39CF524F1F30FD5D00334CB1 /* TaskManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				39DA32711F2EC00900607AEC /* TaskListViewController.swift in Sources */,
 				3980D3591F30C34C001AD708 /* TaskTableViewCell.swift in Sources */,
 				39DA32591F2EAFA300607AEC /* AppDelegate.swift in Sources */,
+				39CF52501F30FD5D00334CB1 /* TaskManager.swift in Sources */,
 				39DA326D1F2EB12E00607AEC /* Enumerations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

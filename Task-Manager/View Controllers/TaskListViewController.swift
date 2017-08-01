@@ -10,8 +10,6 @@ import UIKit
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var tasks: [Task] = []
-    
     var selectedTask: Task!
     
     var dateFormatter = DateFormatter()
@@ -23,13 +21,13 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         dateFormatter.dateFormat = "MMM d, yyyy, h:mm a"
         
         let task1 = Task(title: "Task 1", dueDate: Date(), priority: .high, complete: false)
-        tasks.append(task1)
+        TaskManager.sharedInstance.add(task1)
         
         let task2 = Task(title: "Task 2", dueDate: Date(), priority: .medium, complete: true)
-        tasks.append(task2)
+        TaskManager.sharedInstance.add(task2)
         
         let task3 = Task(title: "Task 3", dueDate: Date(), priority: .low, complete: false)
-        tasks.append(task3)
+        TaskManager.sharedInstance.add(task3)
     }
     
     // MARK: - Navigation
@@ -54,7 +52,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Returns the number of rows in the section of the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return TaskManager.sharedInstance.getTaskCount()
     }
     
     //Returns the cell for the given index path
@@ -64,7 +62,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
         
         //Get the task from our list of tasks for the given index path row
-        let taskForIndexPath = tasks[indexPath.row]
+        let taskForIndexPath = TaskManager.sharedInstance.get(taskAtIndex: indexPath.row)
         
         //Setting the UI elements for the new cell based on the task at the index path row
         cell.titleLabel.text = taskForIndexPath.title
@@ -80,7 +78,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     //Determines what happens when the cell at the given index path is tapped by the user
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Set selectedTask as the task at the given index path row
-        selectedTask = tasks[indexPath.row]
+        selectedTask = TaskManager.sharedInstance.get(taskAtIndex: indexPath.row)
         
         //When a cell is selected, perform the segue to the detail screen to show details about the task
         self.performSegue(withIdentifier: "showTaskDetail", sender: self)
