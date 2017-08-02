@@ -112,6 +112,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="taskListTableView" destination="K2v-Mw-866" id="bnL-Fp-auR"/>
                         <segue destination="Spm-pF-2Qg" kind="show" identifier="showTaskDetail" id="chV-ah-tnX"/>
                     </connections>
                 </viewController>

@@ -10,8 +10,13 @@ import UIKit
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //References to UI elements
+    @IBOutlet weak var taskListTableView: UITableView!
+    
+    //Stores the task when a user selects a row
     var selectedTask: Task!
     
+    //Date formatter object to style our dates for display
     var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
@@ -28,6 +33,13 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let task3 = Task(title: "Task 3", dueDate: Date(), priority: .low, complete: false)
         TaskManager.sharedInstance.add(task3)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //When the view appears, reload the table view in case there is new/updated information to display
+        taskListTableView.reloadData()
     }
     
     // MARK: - Navigation
