@@ -29,11 +29,14 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let task1 = Task(title: "Task 1", dueDate: Date(), priority: .high, complete: false)
         TaskManager.sharedInstance.add(task1)
         
-        let task2 = Task(title: "Task 2", dueDate: Date(), priority: .medium, complete: true)
+        let task2 = Task(title: "Task 2", dueDate: Date(), priority: .medium, complete: false)
         TaskManager.sharedInstance.add(task2)
         
         let task3 = Task(title: "Task 3", dueDate: Date(), priority: .low, complete: false)
         TaskManager.sharedInstance.add(task3)
+        
+        let task4 = Task(title: "Task 4", dueDate: Date(), priority: .low, complete: true)
+        TaskManager.sharedInstance.add(task4)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,12 +81,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         //Get the task from our list of tasks for the given index path row
         let task = taskManager.get(taskAtIndex: indexPath.row)
         
-        //Setting the UI elements for the new cell based on the task at the index path row
-        cell.titleLabel.text = task.title
-        
-        // Change the color of the background depending on priority.
-        cell.backgroundColor = task.complete ? .white : TaskTableViewCell.colors[task.priority]
-        cell.titleLabel.textColor = task.complete ? .black : .white
+        // Set the cell's task property
+        cell.task = task
         
         //Once we're finished customizing our new cell, return it
         return cell

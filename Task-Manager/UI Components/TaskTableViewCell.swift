@@ -10,13 +10,27 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
     
+    var task: Task? {
+        // Computed Properties
+        didSet {
+            if let task = task {
+                //Setting the UI elements for the new cell based on the task at the index path row
+                self.titleLabel.text = task.title
+                
+                // Change the color of the background depending on priority.
+                self.backgroundColor = task.complete ? TaskTableViewCell.completeGreen : TaskTableViewCell.priorityColors[task.priority]
+            }
+        }
+    }
+    
     //References to the UI elements of our prototype cell
     @IBOutlet weak var titleLabel: UILabel!
     
     // Color Scheme Dictionary
-    static let colors = [
-        Task.Priority.high: UIColor(hex: "E74C3C"),
-        Task.Priority.medium: UIColor(hex: "e67e22"),
-        Task.Priority.low: UIColor(hex: "f1c40f")
+    static let completeGreen = UIColor(hex: "2ECC71")
+    static let priorityColors = [
+        Task.Priority.high: UIColor(hex: "EC644B"),
+        Task.Priority.medium: UIColor(hex: "F5AB35"),
+        Task.Priority.low: UIColor(hex: "F4D03F")
     ]
 }

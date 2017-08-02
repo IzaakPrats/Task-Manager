@@ -69,5 +69,8 @@ class AddOrEditTaskViewController: UIViewController {
         
         //Add the new task to our array of tasks using the task manager
         TaskManager.sharedInstance.add(newTask)
+        
+        // Dismiss our view
+        self.dismiss(animated: true)
     }
 }
