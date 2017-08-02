@@ -17,6 +17,7 @@
 		39DA32631F2EAFA300607AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA32611F2EAFA300607AEC /* LaunchScreen.storyboard */; };
 		39DA326B1F2EB12200607AEC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA326A1F2EB12200607AEC /* Task.swift */; };
 		39DA32711F2EC00900607AEC /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA32701F2EC00900607AEC /* TaskListViewController.swift */; };
+		8076C5D91F32364200030A64 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C5D81F32364200030A64 /* UIColor+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		39DA32641F2EAFA300607AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39DA326A1F2EB12200607AEC /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		39DA32701F2EC00900607AEC /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		8076C5D81F32364200030A64 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				39CF524F1F30FD5D00334CB1 /* TaskManager.swift */,
+				8076C5D81F32364200030A64 /* UIColor+Hex.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3980D3651F30F1D9001AD708 /* TaskDetailViewController.swift in Sources */,
+				8076C5D91F32364200030A64 /* UIColor+Hex.swift in Sources */,
 				39DA326B1F2EB12200607AEC /* Task.swift in Sources */,
 				3949DD451F32194800A1727D /* AddOrEditTaskViewController.swift in Sources */,
 				39DA32711F2EC00900607AEC /* TaskListViewController.swift in Sources */,
@@ -329,7 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JA3DANMHQT;
+				DEVELOPMENT_TEAM = 2FDA76HS7S;
 				INFOPLIST_FILE = "Task-Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanbrashear.Task-Manager";
@@ -343,7 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JA3DANMHQT;
+				DEVELOPMENT_TEAM = 2FDA76HS7S;
 				INFOPLIST_FILE = "Task-Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanbrashear.Task-Manager";

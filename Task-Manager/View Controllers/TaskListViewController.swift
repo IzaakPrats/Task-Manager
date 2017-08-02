@@ -74,14 +74,18 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
         
         //Get the task from our list of tasks for the given index path row
-        let taskForIndexPath = TaskManager.sharedInstance.get(taskAtIndex: indexPath.row)
+        let task = TaskManager.sharedInstance.get(taskAtIndex: indexPath.row)
         
         //Setting the UI elements for the new cell based on the task at the index path row
-        cell.titleLabel.text = taskForIndexPath.title
+        cell.titleLabel.text = task.title
+        
         //Display the date as a string on our date label by using the date formatter to convert the due date from the task into a styled string
-        cell.dateLabel.text = dateFormatter.string(from: taskForIndexPath.dueDate)
-        cell.priorityLabel.text = taskForIndexPath.priority.rawValue
-        cell.completionSwitch.isOn = taskForIndexPath.complete
+        cell.createdLabel.text = dateFormatter.string(from: task.dueDate)
+        
+        // Change the color of the background depending on priority.
+        cell.backgroundColor = task.complete ? .white : TaskTableViewCell.colors[task.priority]
+        cell.createdLabel.textColor = task.complete ? .black : .white
+        cell.titleLabel.textColor = task.complete ? .black : .white
         
         //Once we're finished customizing our new cell, return it
         return cell
@@ -97,10 +101,5 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //When a cell is selected, perform the segue to the detail screen to show details about the task
         self.performSegue(withIdentifier: "showTaskDetail", sender: self)
-    }
-    
-    //Returns the height for the cell at the given index path
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
 }
