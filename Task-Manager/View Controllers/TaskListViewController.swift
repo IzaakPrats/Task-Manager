@@ -77,6 +77,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Determines what happens when the cell at the given index path is tapped by the user
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Deselect the row so we don't have the visual effect
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         //Set selectedTask as the task at the given index path row
         selectedTask = TaskManager.sharedInstance.get(taskAtIndex: indexPath.row)
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3949DD451F32194800A1727D /* AddOrEditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3949DD441F32194800A1727D /* AddOrEditTaskViewController.swift */; };
 		3980D3591F30C34C001AD708 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D3581F30C34C001AD708 /* TaskTableViewCell.swift */; };
 		3980D3651F30F1D9001AD708 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3980D3641F30F1D9001AD708 /* TaskDetailViewController.swift */; };
 		39CF52501F30FD5D00334CB1 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF524F1F30FD5D00334CB1 /* TaskManager.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3949DD441F32194800A1727D /* AddOrEditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditTaskViewController.swift; sourceTree = "<group>"; };
 		3980D3581F30C34C001AD708 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		3980D3641F30F1D9001AD708 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		39CF524F1F30FD5D00334CB1 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				39DA32701F2EC00900607AEC /* TaskListViewController.swift */,
 				3980D3641F30F1D9001AD708 /* TaskDetailViewController.swift */,
+				3949DD441F32194800A1727D /* AddOrEditTaskViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				3980D3651F30F1D9001AD708 /* TaskDetailViewController.swift in Sources */,
 				39DA326B1F2EB12200607AEC /* Task.swift in Sources */,
+				3949DD451F32194800A1727D /* AddOrEditTaskViewController.swift in Sources */,
 				39DA32711F2EC00900607AEC /* TaskListViewController.swift in Sources */,
 				3980D3591F30C34C001AD708 /* TaskTableViewCell.swift in Sources */,
 				39DA32591F2EAFA300607AEC /* AppDelegate.swift in Sources */,
