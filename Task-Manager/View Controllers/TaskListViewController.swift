@@ -13,14 +13,15 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     //References to UI elements
     @IBOutlet weak var taskListTableView: UITableView!
     
-    //Stores the task when a user selects a row
-    var selectedTask: Task!
-    
     //Date formatter object to style our dates for display
     var dateFormatter = DateFormatter()
+    
+    // Store Task Manager singleton for ease of access
+    let taskManager = TaskManager.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Task Manager"
         
         //Set the date format for our dateFormatter object
         dateFormatter.dateFormat = "MMM d, yyyy, h:mm a"
@@ -44,17 +45,18 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do preparations before navigation. This includes passing data.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Checking to make sure the segue's identifier is for the segue we want
-        if segue.identifier == "showTaskDetail" {
+        if segue.identifier == "showTaskDetails" {
             //Since it is, let's type cast our segue destination as a TaskDetailViewController, since we know that our destination will be one
             let destinationViewController = segue.destination as! TaskDetailViewController
             
             //Set the task parameter in the destination view controller with the selected task from didSelectRowAt
-            destinationViewController.task = selectedTask
+            if let row = taskListTableView.indexPathForSelectedRow?.row {
+                destinationViewController.task = taskManager.get(taskAtIndex: row)
+            }
         }
-        
     }
     
     //Returns the number of sections the table view has
@@ -74,32 +76,16 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
         
         //Get the task from our list of tasks for the given index path row
-        let task = TaskManager.sharedInstance.get(taskAtIndex: indexPath.row)
+        let task = taskManager.get(taskAtIndex: indexPath.row)
         
         //Setting the UI elements for the new cell based on the task at the index path row
         cell.titleLabel.text = task.title
         
-        //Display the date as a string on our date label by using the date formatter to convert the due date from the task into a styled string
-        cell.createdLabel.text = dateFormatter.string(from: task.dueDate)
-        
         // Change the color of the background depending on priority.
         cell.backgroundColor = task.complete ? .white : TaskTableViewCell.colors[task.priority]
-        cell.createdLabel.textColor = task.complete ? .black : .white
         cell.titleLabel.textColor = task.complete ? .black : .white
         
         //Once we're finished customizing our new cell, return it
         return cell
-    }
-    
-    //Determines what happens when the cell at the given index path is tapped by the user
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Deselect the row so we don't have the visual effect
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        //Set selectedTask as the task at the given index path row
-        selectedTask = TaskManager.sharedInstance.get(taskAtIndex: indexPath.row)
-        
-        //When a cell is selected, perform the segue to the detail screen to show details about the task
-        self.performSegue(withIdentifier: "showTaskDetail", sender: self)
     }
 }

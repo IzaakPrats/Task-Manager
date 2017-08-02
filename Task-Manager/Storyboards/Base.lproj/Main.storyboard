@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Task List-->
+        <!--Task List View Controller-->
         <scene sceneID="tBg-Oq-DOF">
             <objects>
                 <viewController id="QPJ-nq-fUT" customClass="TaskListViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,29 +33,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgh-PE-FrW">
-                                                    <rect key="frame" x="8" y="16" width="359" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/99/9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZ1-Gl-n49">
-                                                    <rect key="frame" x="8" y="48" width="88" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <rect key="frame" x="8" y="26" width="359" height="32.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vgh-PE-FrW" firstAttribute="top" secondItem="GbS-K6-vyo" secondAttribute="topMargin" constant="8" id="FvL-6E-h1V"/>
-                                                <constraint firstItem="yZ1-Gl-n49" firstAttribute="top" secondItem="vgh-PE-FrW" secondAttribute="bottom" constant="8" id="NfM-JT-6G0"/>
-                                                <constraint firstItem="vgh-PE-FrW" firstAttribute="trailing" secondItem="GbS-K6-vyo" secondAttribute="trailingMargin" id="SIC-NM-y69"/>
-                                                <constraint firstItem="vgh-PE-FrW" firstAttribute="leading" secondItem="GbS-K6-vyo" secondAttribute="leadingMargin" id="U4A-Po-Njn"/>
-                                                <constraint firstItem="yZ1-Gl-n49" firstAttribute="leading" secondItem="GbS-K6-vyo" secondAttribute="leadingMargin" id="ufK-WT-T1T"/>
+                                                <constraint firstItem="vgh-PE-FrW" firstAttribute="centerY" secondItem="GbS-K6-vyo" secondAttribute="centerY" id="EQ9-Ed-sUJ"/>
+                                                <constraint firstItem="vgh-PE-FrW" firstAttribute="trailing" secondItem="GbS-K6-vyo" secondAttribute="trailingMargin" id="Rxy-aF-xTX"/>
+                                                <constraint firstItem="vgh-PE-FrW" firstAttribute="leading" secondItem="GbS-K6-vyo" secondAttribute="leadingMargin" id="bre-tN-iqS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="createdLabel" destination="yZ1-Gl-n49" id="LJ4-NG-830"/>
                                             <outlet property="titleLabel" destination="vgh-PE-FrW" id="ZOd-gh-UTd"/>
+                                            <segue destination="Spm-pF-2Qg" kind="show" identifier="showTaskDetails" id="PJW-bA-bDV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -73,7 +65,7 @@
                             <constraint firstAttribute="trailing" secondItem="K2v-Mw-866" secondAttribute="trailing" id="yCa-Ye-pyn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Task List" id="9Rd-cu-QGl">
+                    <navigationItem key="navigationItem" id="9Rd-cu-QGl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ESr-BS-5No">
                             <connections>
                                 <segue destination="2gf-Ig-FOU" kind="show" id="avd-Qa-SJZ"/>
@@ -82,12 +74,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="taskListTableView" destination="K2v-Mw-866" id="bnL-Fp-auR"/>
-                        <segue destination="Spm-pF-2Qg" kind="show" identifier="showTaskDetail" id="chV-ah-tnX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eg0-3Z-LDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="554.39999999999998" y="-98.50074962518741"/>
+            <point key="canvasLocation" x="686" y="-99"/>
         </scene>
         <!--Task Details-->
         <scene sceneID="VcI-Sc-W3X">
@@ -102,37 +93,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t74-e3-GdR">
-                                <rect key="frame" x="168" y="72" width="38" height="21"/>
+                                <rect key="frame" x="168" y="124" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU7-pQ-vGg">
-                                <rect key="frame" x="166" y="101" width="42" height="21"/>
+                                <rect key="frame" x="166" y="153" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-zX-gcK">
-                                <rect key="frame" x="157.5" y="142" width="59.5" height="21"/>
+                                <rect key="frame" x="157.5" y="194" width="59.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgH-mZ-8g6">
-                                <rect key="frame" x="166" y="171" width="42" height="21"/>
+                                <rect key="frame" x="166" y="223" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idf-kD-azI">
-                                <rect key="frame" x="150" y="212" width="74" height="21"/>
+                                <rect key="frame" x="150" y="264" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGt-3z-aLo">
-                                <rect key="frame" x="166" y="241" width="42" height="21"/>
+                                <rect key="frame" x="166" y="293" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -178,25 +169,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffa-oi-uMr">
-                                <rect key="frame" x="168" y="72" width="38" height="21"/>
+                                <rect key="frame" x="168" y="124" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-yp-hpN">
-                                <rect key="frame" x="16" y="101" width="343" height="30"/>
+                                <rect key="frame" x="16" y="153" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8j-X3-aSm">
-                                <rect key="frame" x="157.5" y="151" width="59.5" height="21"/>
+                                <rect key="frame" x="157.5" y="203" width="59.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IDg-Pr-sqG">
-                                <rect key="frame" x="92" y="180" width="191" height="29"/>
+                                <rect key="frame" x="92" y="232" width="191" height="29"/>
                                 <segments>
                                     <segment title="Low"/>
                                     <segment title="Medium"/>
@@ -204,13 +195,13 @@
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csd-gw-gnt">
-                                <rect key="frame" x="166.5" y="228" width="41" height="21"/>
+                                <rect key="frame" x="166.5" y="280" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="wMM-cw-35I">
-                                <rect key="frame" x="0.0" y="257" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="309" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="523376765.07076901">
                                     <!--2017-08-02 14:26:05 +0000-->
                                 </date>
@@ -257,7 +248,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IAG-B4-wZJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mih-lP-AI3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mih-lP-AI3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

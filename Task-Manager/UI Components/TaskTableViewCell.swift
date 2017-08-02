@@ -12,7 +12,6 @@ class TaskTableViewCell: UITableViewCell {
     
     //References to the UI elements of our prototype cell
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var createdLabel: UILabel!
     
     // Color Scheme Dictionary
     static let colors = [
