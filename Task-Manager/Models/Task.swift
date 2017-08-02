@@ -9,11 +9,21 @@
 import UIKit
 
 class Task {
+    
+    // MARK: Types
+    enum Priority: String {
+        case low = "Low"
+        case medium = "Medium"
+        case high = "High"
+    }
+    
+    // MARK: Properties
     var title: String
     var dueDate: Date
     var priority: Priority
     var complete: Bool
     
+    // MARK: Methods
     init(title: String, dueDate: Date, priority: Priority, complete: Bool) {
         self.title = title
         self.dueDate = dueDate

@@ -44,7 +44,7 @@ class AddOrEditTaskViewController: UIViewController {
         }
         
         //Constant used to store the priority for the new task
-        let taskPriority: Priority
+        let taskPriority: Task.Priority
         
         //Get the index of the selected segment for our segmented control
         let taskPrioritySelector = prioritySegmentedControl.selectedSegmentIndex
