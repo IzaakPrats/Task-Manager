@@ -30,4 +30,25 @@ class TaskManager {
     func add(_ task: Task) {
         tasks.append(task)
     }
+    
+    // INSTRUCTOR ONLY
+    func loadTestData(rows: Int) {
+        for i in 0 ..< rows {
+            
+            let randomPriority = arc4random_uniform(3)
+            var priority: Task.Priority!
+            
+            switch randomPriority {
+            case 0: priority = .low
+            case 1: priority = .medium
+            case 2: priority = .high
+            default: fatalError()
+            }
+            
+            let complete = arc4random_uniform(10) % 2 == 0
+            
+            let task = Task(title: "Task \(i)", dueDate: Date(), priority: priority, complete: complete)
+            self.tasks.append(task)
+        }
+    }
 }

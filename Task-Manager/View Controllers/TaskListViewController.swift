@@ -26,17 +26,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         //Set the date format for our dateFormatter object
         dateFormatter.dateFormat = "MMM d, yyyy, h:mm a"
         
-        let task1 = Task(title: "Task 1", dueDate: Date(), priority: .high, complete: false)
-        TaskManager.sharedInstance.add(task1)
-        
-        let task2 = Task(title: "Task 2", dueDate: Date(), priority: .medium, complete: false)
-        TaskManager.sharedInstance.add(task2)
-        
-        let task3 = Task(title: "Task 3", dueDate: Date(), priority: .low, complete: false)
-        TaskManager.sharedInstance.add(task3)
-        
-        let task4 = Task(title: "Task 4", dueDate: Date(), priority: .low, complete: true)
-        TaskManager.sharedInstance.add(task4)
+        taskManager.loadTestData(rows: 100)
     }
     
     override func viewWillAppear(_ animated: Bool) {
