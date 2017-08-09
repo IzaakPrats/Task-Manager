@@ -77,6 +77,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eg0-3Z-LDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AcQ-yg-bHC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="686" y="-99"/>
         </scene>
@@ -150,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="1582" y="-99"/>
         </scene>
-        <!--Add/Edit Task-->
+        <!--New Task-->
         <scene sceneID="ifu-6x-Vdt">
             <objects>
-                <viewController id="2gf-Ig-FOU" customClass="AddOrEditTaskViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2gf-Ig-FOU" customClass="NewTaskViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qeT-oF-Ifi"/>
                         <viewControllerLayoutGuide type="bottom" id="aWX-1v-WcL"/>
@@ -234,7 +235,7 @@
                             <constraint firstItem="hXF-59-adH" firstAttribute="top" secondItem="qeT-oF-Ifi" secondAttribute="bottom" constant="16" id="ujd-hg-2G9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add/Edit Task" id="aTj-3e-t7o">
+                    <navigationItem key="navigationItem" title="New Task" id="aTj-3e-t7o">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="6nX-VM-WHM">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="2gf-Ig-FOU" id="sgL-sT-At7"/>
@@ -245,6 +246,7 @@
                         <outlet property="dueDatePicker" destination="wMM-cw-35I" id="LyV-yz-j47"/>
                         <outlet property="prioritySegmentedControl" destination="IDg-Pr-sqG" id="3ZR-3a-rRb"/>
                         <outlet property="titleTextField" destination="h8b-yp-hpN" id="DZn-61-cVB"/>
+                        <segue destination="AcQ-yg-bHC" kind="unwind" identifier="unwindSegueToTaskList" unwindAction="unwindToTaskListViewControllerWithSegue:" id="w4i-hq-8Oq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Iz-sE-G7M" userLabel="First Responder" sceneMemberID="firstResponder"/>

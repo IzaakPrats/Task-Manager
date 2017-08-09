@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddOrEditTaskViewController: UIViewController {
+class NewTaskViewController: UIViewController {
     
     //References to connected UI elements
     @IBOutlet weak var titleTextField: UITextField!
@@ -70,7 +70,7 @@ class AddOrEditTaskViewController: UIViewController {
         //Add the new task to our array of tasks using the task manager
         TaskManager.sharedInstance.add(newTask)
         
-        // Dismiss our view
-        self.dismiss(animated: true)
+        // Dismiss our view via an unwind segue
+        self.performSegue(withIdentifier: "unwindSegueToTaskList", sender: self)
     }
 }

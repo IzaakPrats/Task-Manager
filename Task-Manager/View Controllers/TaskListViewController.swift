@@ -13,6 +13,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     //References to UI elements
     @IBOutlet weak var taskListTableView: UITableView!
     
+    @IBAction func unwindToTaskListViewController(segue: UIStoryboardSegue) {
+        // Here we can grab info from the previous view controller, if we need.
+    }
+    
     //Date formatter object to style our dates for display
     var dateFormatter = DateFormatter()
     
@@ -26,7 +30,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         //Set the date format for our dateFormatter object
         dateFormatter.dateFormat = "MMM d, yyyy, h:mm a"
         
-        taskManager.loadTestData(rows: 100)
+        // taskManager.loadTestData(rows: 100)
     }
     
     override func viewWillAppear(_ animated: Bool) {
