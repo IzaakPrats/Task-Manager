@@ -162,62 +162,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffa-oi-uMr">
-                                <rect key="frame" x="168" y="124" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-yp-hpN">
-                                <rect key="frame" x="16" y="153" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8j-X3-aSm">
-                                <rect key="frame" x="157.5" y="203" width="59.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IDg-Pr-sqG">
-                                <rect key="frame" x="92" y="232" width="191" height="29"/>
-                                <segments>
-                                    <segment title="Low"/>
-                                    <segment title="Medium"/>
-                                    <segment title="High"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csd-gw-gnt">
-                                <rect key="frame" x="166.5" y="280" width="41" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="wMM-cw-35I">
-                                <rect key="frame" x="0.0" y="309" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="523376765.07076901">
-                                    <!--2017-08-02 14:26:05 +0000-->
-                                </date>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hXF-59-adH">
+                                <rect key="frame" x="16" y="132" width="343" height="326.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mgs-Tb-1cc">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="326.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2BI-k9-lHr" userLabel="Title Row">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffa-oi-uMr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-yp-hpN">
+                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rUQ-li-HAP" userLabel="Priority Row">
+                                                <rect key="frame" x="0.0" y="46" width="343" height="28"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8j-X3-aSm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IDg-Pr-sqG">
+                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="29"/>
+                                                        <segments>
+                                                            <segment title="Low"/>
+                                                            <segment title="Medium"/>
+                                                            <segment title="High"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2aX-0V-Fjb" userLabel="Date Row">
+                                                <rect key="frame" x="0.0" y="90" width="343" height="236.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csd-gw-gnt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="wMM-cw-35I">
+                                                        <rect key="frame" x="0.0" y="20.5" width="343" height="216"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="523376765.07076901">
+                                                            <!--2017-08-02 14:26:05 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="h8b-yp-hpN" firstAttribute="centerX" secondItem="Dvg-cG-88n" secondAttribute="centerX" id="3fq-sj-m5h"/>
-                            <constraint firstItem="IDg-Pr-sqG" firstAttribute="centerX" secondItem="Dvg-cG-88n" secondAttribute="centerX" id="4CK-7b-WUi"/>
-                            <constraint firstItem="Csd-gw-gnt" firstAttribute="centerX" secondItem="Dvg-cG-88n" secondAttribute="centerX" id="8eV-4x-J5d"/>
-                            <constraint firstItem="v8j-X3-aSm" firstAttribute="centerX" secondItem="Dvg-cG-88n" secondAttribute="centerX" id="AkU-hV-e8n"/>
-                            <constraint firstItem="IDg-Pr-sqG" firstAttribute="top" secondItem="v8j-X3-aSm" secondAttribute="bottom" constant="8" id="Kc3-OH-33e"/>
-                            <constraint firstItem="h8b-yp-hpN" firstAttribute="top" secondItem="Ffa-oi-uMr" secondAttribute="bottom" constant="8" id="R7N-RD-Rno"/>
-                            <constraint firstItem="wMM-cw-35I" firstAttribute="top" secondItem="Csd-gw-gnt" secondAttribute="bottom" constant="8" id="S1w-MK-PoO"/>
-                            <constraint firstItem="wMM-cw-35I" firstAttribute="leading" secondItem="Dvg-cG-88n" secondAttribute="leading" id="Tb9-oT-Ndt"/>
-                            <constraint firstItem="Ffa-oi-uMr" firstAttribute="top" secondItem="qeT-oF-Ifi" secondAttribute="bottom" constant="8" id="Yf5-jO-l5F"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h8b-yp-hpN" secondAttribute="trailing" id="eZz-mg-Eax"/>
-                            <constraint firstItem="Ffa-oi-uMr" firstAttribute="centerX" secondItem="Dvg-cG-88n" secondAttribute="centerX" id="iYw-dm-2Qn"/>
-                            <constraint firstAttribute="trailing" secondItem="wMM-cw-35I" secondAttribute="trailing" id="kUx-bg-v8H"/>
-                            <constraint firstItem="h8b-yp-hpN" firstAttribute="leading" secondItem="Dvg-cG-88n" secondAttribute="leadingMargin" id="sFr-gi-QhG"/>
-                            <constraint firstItem="Csd-gw-gnt" firstAttribute="top" secondItem="IDg-Pr-sqG" secondAttribute="bottom" constant="20" id="wXG-d0-Pz8"/>
-                            <constraint firstItem="v8j-X3-aSm" firstAttribute="top" secondItem="h8b-yp-hpN" secondAttribute="bottom" constant="20" id="xQZ-DU-Gbv"/>
+                            <constraint firstItem="hXF-59-adH" firstAttribute="leading" secondItem="Dvg-cG-88n" secondAttribute="leadingMargin" id="5H4-ej-8fO"/>
+                            <constraint firstItem="hXF-59-adH" firstAttribute="centerX" secondItem="Dvg-cG-88n" secondAttribute="centerX" id="Ml6-S8-wUy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hXF-59-adH" secondAttribute="trailing" id="nTf-kf-UI8"/>
+                            <constraint firstItem="hXF-59-adH" firstAttribute="top" secondItem="qeT-oF-Ifi" secondAttribute="bottom" constant="16" id="ujd-hg-2G9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add/Edit Task" id="aTj-3e-t7o">
