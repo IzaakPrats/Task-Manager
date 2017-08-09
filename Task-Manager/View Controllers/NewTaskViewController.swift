@@ -15,31 +15,14 @@ class NewTaskViewController: UIViewController {
     @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     @IBAction func saveButtonTapped(_ sender: Any) {
         //Make sure there is a title set for the new task, otherwise return and don't save the new task
         guard let taskTitle = titleTextField.text else {
+            return
+        }
+        
+        // Make sure the title isn't just whitespace or empty.
+        guard !taskTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             return
         }
         
