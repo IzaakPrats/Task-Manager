@@ -11,7 +11,6 @@ import UIKit
 class TaskDetailViewController: UIViewController {
     
     //References to UI elements for this screen
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -28,12 +27,12 @@ class TaskDetailViewController: UIViewController {
         dateFormatter.dateFormat = "MMM d, yyyy, h:mm a"
         
         //Set the UI elements with information from the task
-        titleLabel.text = task.title
+        self.title = task.title
         priorityLabel.text = task.priority.rawValue
         dateLabel.text = dateFormatter.string(from: task.dueDate)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
